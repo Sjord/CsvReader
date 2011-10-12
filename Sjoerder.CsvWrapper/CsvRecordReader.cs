@@ -13,9 +13,18 @@ namespace Sjoerder.CsvWrapper
     {
         private CsvReader csvReader;
         private readonly CsvHeaders headers;
-        public object FieldCount { get { return csvReader.FieldCount;  } }
+        public bool SkipEmptyLines { get { return csvReader.SkipEmptyLines; } set { csvReader.SkipEmptyLines = value; } }
+        public string DefaultHeaderName { get { return csvReader.DefaultHeaderName; } set { csvReader.DefaultHeaderName = value; } }
+        public bool SupportsMultiline { get { return csvReader.SupportsMultiline; } set { csvReader.SupportsMultiline = value; } }
+        public char Delimiter { get { return csvReader.Delimiter;  } }
+        public int FieldCount { get { return csvReader.FieldCount;  } }
         public long CurrentRecordIndex { get { return csvReader.CurrentRecordIndex; } }
         public bool HasHeaders { get { return headers != null; } }
+
+        public CsvHeaders GetFieldHeaders()
+        {
+            return headers;
+        }
 
         /// <summary>
 		/// Initializes a new instance of the CsvRecordReader class.

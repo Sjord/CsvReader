@@ -351,8 +351,6 @@ namespace Sjoerder.CsvWrapper.Tests.Unit
 		{
 			using (CsvRecordReader csv = new CsvRecordReader(new StringReader(CsvReaderSampleData.SampleData1), true))
 			{
-				
-
 				string[] values = new string[CsvReaderSampleData.SampleData1RecordCount];
 
 				foreach (IDataRecord reader in csv)

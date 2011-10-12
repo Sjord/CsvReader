@@ -71,12 +71,43 @@ System.Boolean,System.DateTime,System.Single,System.Double,System.Decimal,System
 
 		#region Sample data utility methods
 
+        public static void CheckSampleData1(CsvRecordReader csv)
+        {
+            Assert.AreEqual(CsvReaderSampleData.SampleData1FieldCount, csv.FieldCount);
+
+            if (csv.HasHeaders)
+            {
+                var headers = csv.GetFieldHeaders();
+                Assert.AreEqual(0, headers.GetFieldIndex(SampleData1Header0));
+                Assert.AreEqual(1, headers.GetFieldIndex(SampleData1Header1));
+                Assert.AreEqual(2, headers.GetFieldIndex(SampleData1Header2));
+                Assert.AreEqual(3, headers.GetFieldIndex(SampleData1Header3));
+                Assert.AreEqual(4, headers.GetFieldIndex(SampleData1Header4));
+                Assert.AreEqual(5, headers.GetFieldIndex(SampleData1Header5));
+            }
+
+            Assert.AreEqual(-1, csv.CurrentRecordIndex);
+
+            int recordCount = 0;
+
+            foreach (CsvRecord record in csv)
+            {
+                CheckSampleData1(csv.HasHeaders, csv.CurrentRecordIndex, record.ToArray());
+                recordCount++;
+            }
+
+            if (csv.HasHeaders)
+                Assert.AreEqual(CsvReaderSampleData.SampleData1RecordCount, recordCount);
+            else
+                Assert.AreEqual(CsvReaderSampleData.SampleData1RecordCount + 1, recordCount);
+        }
+
 		public static void CheckSampleData1(bool hasHeaders, long recordIndex, string[] fields)
 		{
 			CheckSampleData1(hasHeaders, recordIndex, fields, 0);
 		}
 
-		public static void CheckSampleData1(bool hasHeaders, long recordIndex, string[] fields, int startIndex)
+        public static void CheckSampleData1(bool hasHeaders, long recordIndex, string[] fields, int startIndex)
 		{
 			Assert.IsTrue(fields.Length - startIndex >= 6);
 
@@ -156,5 +187,5 @@ System.Boolean,System.DateTime,System.Single,System.Double,System.Decimal,System
 		}
 
 		#endregion
-	}
+    }
 }

@@ -9,12 +9,15 @@ namespace Sjoerder.CsvWrapper
     using System.Diagnostics;
     using System.Globalization;
     using LumenWorks.Framework.IO.Csv.Resources;
+    using Sjoerder.CsvWrapper.Resources;
 
     public class CsvRecord : IDataRecord
     {
         private string[] fields;
         private int _fieldCount;
         private CsvHeaders headers;
+        public bool HasHeaders { get { return headers != null; } }
+        public int Length { get { return _fieldCount; } }
 
         /// <summary>
         /// Gets the field with the specified name. <see cref="M:hasHeaders"/> must be <see langword="true"/>.
@@ -67,6 +70,10 @@ namespace Sjoerder.CsvWrapper
         {
             get
             {
+                if (i < 0 || i >= _fieldCount)
+                {
+                    throw new ArgumentOutOfRangeException("i");
+                }
                 return fields[i];
             }
         } 
@@ -302,6 +309,11 @@ namespace Sjoerder.CsvWrapper
             }
 
             return length;
+        }
+
+        public string[] ToArray()
+        {
+            return (string[]) fields.Clone();
         }
     }
 }

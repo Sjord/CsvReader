@@ -30,5 +30,7 @@
         {
             get { return headers[i]; }
         }
+
+        public int Length { get { return headers.Length; } }
     }
 }

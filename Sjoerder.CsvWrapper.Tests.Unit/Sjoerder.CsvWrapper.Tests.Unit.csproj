@@ -45,9 +45,16 @@
   <ItemGroup>
     <Compile Include="CsvReaderIDataReaderTest.cs" />
     <Compile Include="CsvReaderSampleData.cs" />
+    <Compile Include="CsvReaderTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LumenWorks.Framework.IO\LumenWorks.Framework.IO.csproj">
+      <Project>{E3B83D68-C90C-4874-8E5F-DEC8D038BC7C}</Project>
+      <Name>LumenWorks.Framework.IO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sjoerder.CsvWrapper\Sjoerder.CsvWrapper.csproj">
       <Project>{D581BDA5-CF33-48E4-B576-C9FCFD8C60DC}</Project>
       <Name>Sjoerder.CsvWrapper</Name>
