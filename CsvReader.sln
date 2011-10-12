@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvReaderBenchmarks", "CsvR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvReaderDemoWeb", "CsvReaderDemoWeb\CsvReaderDemoWeb.csproj", "{800B3F74-702F-48C8-B3E9-AA658E3D5A05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sjoerder.CsvWrapper", "Sjoerder.CsvWrapper\Sjoerder.CsvWrapper.csproj", "{D581BDA5-CF33-48E4-B576-C9FCFD8C60DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sjoerder.CsvWrapper.Tests.Unit", "Sjoerder.CsvWrapper.Tests.Unit\Sjoerder.CsvWrapper.Tests.Unit.csproj", "{563E2F99-69C1-4AC5-8CF1-173545292751}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{800B3F74-702F-48C8-B3E9-AA658E3D5A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800B3F74-702F-48C8-B3E9-AA658E3D5A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{800B3F74-702F-48C8-B3E9-AA658E3D5A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D581BDA5-CF33-48E4-B576-C9FCFD8C60DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D581BDA5-CF33-48E4-B576-C9FCFD8C60DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D581BDA5-CF33-48E4-B576-C9FCFD8C60DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D581BDA5-CF33-48E4-B576-C9FCFD8C60DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{563E2F99-69C1-4AC5-8CF1-173545292751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{563E2F99-69C1-4AC5-8CF1-173545292751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{563E2F99-69C1-4AC5-8CF1-173545292751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{563E2F99-69C1-4AC5-8CF1-173545292751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
